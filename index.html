@@ -11,18 +11,21 @@
 
   <body>
     <header>
-      <div id="highScore"><a href="">See Highscores</a></div>
+      <button id="highScoreBtn">See Highscores</button>
       <div id="timer">Time Left: <span id="timeLeft">30</span>s</div>
     </header>
-    <div id="startContainer"><button id="startBtn">START</button></div>
+    <div id="startContainer">
+      <button class="button" id="startBtn">START</button>
+    </div>
+
     <div id="container">
-      <div id="question">what is your quest?</div>
-      <div id="answers">
-        <!-- <button class="btn">answer 1</button>
-        <button class="btn">answer 2</button>
-        <button class="btn">answer 3</button>
-        <button class="btn">answer 4</button> -->
-      </div>
+      <div id="question"></div>
+      <div id="answers"></div>
+    </div>
+    <div id="highScoreContainer">
+      Highscores
+      <ol id="scores"></ol>
+      <div id="scoreEntry"></div>
     </div>
   </body>
 </html>
