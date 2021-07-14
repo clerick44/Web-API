@@ -43,7 +43,6 @@ header div {
 }
 
 #highScoreBtn:hover {
-  /* font-weight: 500; */
   text-decoration: underline;
 }
 #startBtn {
@@ -55,7 +54,6 @@ header div {
   width: 200px;
   border: 3px solid black;
   border-radius: 15px;
-  /* background-color: indigo; */
 }
 
 #container {
@@ -105,7 +103,6 @@ header div {
 
 #initials {
   float: left;
-  /* display: none; */
   min-height: 50px;
   width: 100%;
   margin-top: 10px;
