@@ -30,24 +30,17 @@ var highScores = [];
 //   { name: "bill", score: "19" },
 // ];
 
-window.onload = function () {
-  var storedHighScores = JSON.parse(localStorage.getItem("highScores"));
-  if (storedHighScores !== null) {
-    highScores = storedHighScores;
-  }
-  console.log(highScores);
-};
-
 function displayHighScores() {
   resetHighScores();
+  retrieveHighscores();
   initialsContainerEl.style.display = "none";
   saveInitialsButtonEl.style.display = "none";
   highScoreContainerEl.style.display = "block";
   let evenCounter = 1;
   highScores.forEach((element) => {
     const scoreLine = document.createElement("li");
-    const highName = element.name;
-    const highScore = element.score;
+    var highName = element.name;
+    var highScore = element.score;
     scoreLine.textContent = highName + "     -     " + highScore;
     if (evenCounter % 2 == 0) {
       scoreLine.style.backgroundColor = "coral";
@@ -68,13 +61,24 @@ function closeHighScores() {
 }
 
 function saveInitials(e) {
-  e.preventDefault();
-  var newName = initials.textContent;
-  console.log(newName);
-  // highScores =
-  //   highScores +
-  //   { Name: , Score: timeLeft };
+  var newName = initials.value;
+  highScores.push({ name: newName, score: timeLeft });
+  storeHighScores();
   displayHighScores();
+}
+
+function storeHighScores() {
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+}
+
+function retrieveHighscores() {
+  var storedHighScores = JSON.parse(localStorage.getItem("highScores"));
+  if (storedHighScores !== null) {
+    highScores = storedHighScores;
+  }
+  highScores.sort(function (a, b) {
+    return b.score - a.score;
+  });
 }
 
 function initializeGame() {
