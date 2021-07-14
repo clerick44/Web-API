@@ -15,17 +15,27 @@
       <div id="timer">Time Left: <span id="timeLeft">30</span>s</div>
     </header>
     <div id="startContainer">
-      <button class="button" id="startBtn">START</button>
+      <button class="button hideable" id="startBtn">START</button>
     </div>
 
-    <div id="container">
+    <div id="container" class="hideable">
       <div id="question"></div>
       <div id="answers"></div>
     </div>
     <div id="highScoreContainer">
       Highscores
       <ol id="scores"></ol>
-      <div id="scoreEntry"></div>
+      <div id="scoreEntry">
+        <label for="initials">Initials</label>
+        <input
+          type="text"
+          placeholder="Enter your initials..."
+          name="initials"
+          id="initials"
+        />
+      </div>
+      <button class="button" id="saveInitials">Save</button>
+      <button class="button" id="closeHighScore">Close</button>
     </div>
   </body>
 </html>

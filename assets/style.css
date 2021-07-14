@@ -71,7 +71,9 @@ header div {
 }
 
 #highScoreContainer {
-  display: block;
+  display: none;
+  position: absolute;
+  top: 50px;
   padding: 20px;
   margin: 20px auto;
   width: 600px;
@@ -99,6 +101,14 @@ header div {
   display: grid;
   gap: 20px;
   margin: 15px 0;
+}
+
+#initials {
+  float: left;
+  /* display: none; */
+  min-height: 50px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .button {
